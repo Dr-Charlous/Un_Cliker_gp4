@@ -220,8 +220,6 @@ public class Maingame : MonoBehaviour
     //RESET
     public void ResetButton()
     {
-        allUpgradePrize = 500;
-
         //CLIKER
         currentScore = 0;
         hitPower = 1;
@@ -235,6 +233,9 @@ public class Maingame : MonoBehaviour
         amount1Profit = 1;
         amount2 = 0;
         amount2Profit = 5;
+
+        allUpgradePrize = 500;
+        upgradePrize = 500;
     }
 
 }
