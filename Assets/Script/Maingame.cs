@@ -220,6 +220,8 @@ public class Maingame : MonoBehaviour
     //RESET
     public void ResetButton()
     {
+        allUpgradePrize = 500;
+
         //CLIKER
         currentScore = 0;
         hitPower = 1;
