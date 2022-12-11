@@ -32,6 +32,14 @@ public class Maingame : MonoBehaviour
     public int upgradePrize;
     public Text upgradeText;
 
+    //XXLUP
+    public int allUpgradePrize;
+    public Text allUpgradeText;
+
+    //RANDOM GOLD
+    public bool nowIsEvent;
+    public GameObject goldButton;
+
 
 
 
@@ -43,7 +51,34 @@ public class Maingame : MonoBehaviour
         hitPower = 1;
         scoreIncreasePerSecond = 1;
         x = 0f;
+
+        //SET ALL VAR BEFORE LOAD
+        shop1prize = 25;
+        shop2prize = 125;
+        amount1 = 0;
+        amount1Profit = 1;
+        amount2 = 0;
+        amount2Profit = 5;
+
+        //RESET LINE
+        PlayerPrefs.DeleteAll();
+
+        //LOAD
+        currentScore = PlayerPrefs.GetInt("currentScore", 0);
+        hitPower = PlayerPrefs.GetInt("hitPower", 1);
+        x = PlayerPrefs.GetInt("x", 0);
+
+        shop1prize = PlayerPrefs.GetInt("shop1prize", 25);
+        shop2prize = PlayerPrefs.GetInt("shop2prize", 125);
+        amount1 = PlayerPrefs.GetInt("amount1", 0);
+        amount1Profit = PlayerPrefs.GetInt("amount1Profit", 0);
+        amount2 = PlayerPrefs.GetInt("amount2", 0);
+        amount2Profit = PlayerPrefs.GetInt("amount2Profit", 0);
+        upgradePrize = PlayerPrefs.GetInt("upgradePrize", 50);
+        allUpgradePrize = PlayerPrefs.GetInt("allUpgradePrize", 500);
     }
+
+
 
     //Update per frame
     void Update()
@@ -63,13 +98,47 @@ public class Maingame : MonoBehaviour
 
         //UPGRADE
         upgradeText.text = "Cost: " + upgradePrize + " $";
+
+        //SAVE
+        PlayerPrefs.SetInt("currentScore", (int)currentScore);
+        PlayerPrefs.SetInt("hitPower", (int)hitPower);
+        PlayerPrefs.SetInt("x", (int)x);
+
+        PlayerPrefs.SetInt("shop1prize", (int)shop1prize);
+        PlayerPrefs.SetInt("shop2prize", (int)shop2prize);
+        PlayerPrefs.SetInt("amount1", (int)amount1);
+        PlayerPrefs.SetInt("amount1Profit", (int)amount1Profit);
+        PlayerPrefs.SetInt("amount2", (int)amount2);
+        PlayerPrefs.SetInt("amount2Profit", (int)amount2Profit);
+        PlayerPrefs.SetInt("upgradePrize", (int)upgradePrize);
+        PlayerPrefs.SetInt("allUpgradePrize", (int)allUpgradePrize);
+
+        //XXLUP
+        allUpgradeText.text = "Cost: " + allUpgradePrize + " $";
+
+        //RANDOM GOLD
+        if(nowIsEvent == false && goldButton.active == true)
+        {
+            goldButton.SetActive(false);
+            StartCoroutine(WaitForEvent());
+        }
+
+        if(nowIsEvent == true && goldButton.active == false)
+        {
+            goldButton.SetActive(true);
+            goldButton.transform.position = new Vector3(Random.Range(400, 1520), Random.Range(200, 880), 0);
+        }
     }
+
+
 
     public void Hit()
     {
         //CLIKER
         currentScore += hitPower;
     }
+
+
 
     public void Shop1()
     {
@@ -96,6 +165,7 @@ public class Maingame : MonoBehaviour
     }
 
 
+
     //UPGRADE
     public void Upgrade()
     {
@@ -106,4 +176,42 @@ public class Maingame : MonoBehaviour
             upgradePrize *= 3;
         }
     }
+
+    //XXLUP
+    public void AllProfitUpgrade()
+    {
+        if(currentScore >= allUpgradePrize)
+        {
+            currentScore -= allUpgradePrize;
+            x *= 2;
+            allUpgradePrize *= 3;
+            amount1Profit *= 2;
+            amount2Profit *= 2;
+        }
+    }
+
+    //RANDOM GOLD
+    public void GetReward()
+    {
+        currentScore = currentScore + Random.Range(1, 500);
+        nowIsEvent = false;
+        StartCoroutine(WaitForEvent());
+    }
+
+    IEnumerator WaitForEvent()
+    {
+        yield return new WaitForSeconds(5f);
+
+        int x = 0;
+        x = Random.Range(1, 3);
+
+        if(x == 2)
+        {
+            nowIsEvent = true;
+        } else
+        {
+            goldButton.SetActive(true);
+        }
+    }
+
 }
