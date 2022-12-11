@@ -43,6 +43,10 @@ public class Maingame : MonoBehaviour
     //RESET
     public GameObject resetButton;
 
+    //HIT
+    public GameObject plusObject;
+    public Text plusText;
+
 
 
 
@@ -131,6 +135,9 @@ public class Maingame : MonoBehaviour
             goldButton.SetActive(true);
             goldButton.transform.position = new Vector3(Random.Range(400, 1520), Random.Range(200, 880), 0);
         }
+
+        //HIT
+        plusText.text = "+ " + hitPower;
     }
 
 
@@ -139,6 +146,16 @@ public class Maingame : MonoBehaviour
     {
         //CLIKER
         currentScore += hitPower;
+
+        //HIT
+        plusObject.SetActive(true);
+
+        plusObject.transform.position = new Vector3(Random.Range(465, 645 + 1), Random.Range(205, 405 + 1), 0);
+        
+        //plusObject.SetActive(false);
+
+        StopAllCoroutines();
+        StartCoroutine(Fly());
     }
 
 
@@ -215,6 +232,19 @@ public class Maingame : MonoBehaviour
         {
             goldButton.SetActive(true);
         }
+    }
+
+    //HIT
+    IEnumerator Fly()
+    {
+        for(int i=0;i<=19;i++)
+        {
+            yield return new WaitForSeconds(0.01f);
+
+            plusObject.transform.position = new Vector3(plusObject.transform.position.x, plusObject.transform.position.y + 2, 0);
+        }
+
+        plusObject.SetActive(false);
     }
 
     //RESET
