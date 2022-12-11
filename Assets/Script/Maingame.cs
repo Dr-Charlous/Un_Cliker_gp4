@@ -40,6 +40,9 @@ public class Maingame : MonoBehaviour
     public bool nowIsEvent;
     public GameObject goldButton;
 
+    //RESET
+    public GameObject resetButton;
+
 
 
 
@@ -61,7 +64,7 @@ public class Maingame : MonoBehaviour
         amount2Profit = 5;
 
         //RESET LINE
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
 
         //LOAD
         currentScore = PlayerPrefs.GetInt("currentScore", 0);
@@ -212,6 +215,24 @@ public class Maingame : MonoBehaviour
         {
             goldButton.SetActive(true);
         }
+    }
+
+    //RESET
+    public void ResetButton()
+    {
+        //CLIKER
+        currentScore = 0;
+        hitPower = 1;
+        scoreIncreasePerSecond = 1;
+        x = 0f;
+
+        //SET ALL VAR BEFORE LOAD
+        shop1prize = 25;
+        shop2prize = 125;
+        amount1 = 0;
+        amount1Profit = 1;
+        amount2 = 0;
+        amount2Profit = 5;
     }
 
 }
