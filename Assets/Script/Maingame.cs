@@ -13,6 +13,9 @@ public class Maingame : MonoBehaviour
     public float x;
 
     //SHOP
+    public GameObject ShopButton;
+    public GameObject MenuShop;
+
     public int shop1prize;
     public Text shop1text;
 
@@ -46,6 +49,8 @@ public class Maingame : MonoBehaviour
     //HIT
     public GameObject plusObject;
     public Text plusText;
+
+
 
 
 
@@ -159,6 +164,11 @@ public class Maingame : MonoBehaviour
     }
 
 
+
+    public void ShopBut()
+    {
+        MenuShop.SetActive(!MenuShop.activeSelf);
+    }
 
     public void Shop1()
     {
