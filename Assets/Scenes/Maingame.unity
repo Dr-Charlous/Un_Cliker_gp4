@@ -2378,6 +2378,10 @@ MonoBehaviour:
   - {fileID: 2573668279297543186, guid: f02d1a3e4490a9b48be54c71c7e72195, type: 3}
   - {fileID: 4867020868440753455, guid: f1f5dc2f009a91847ad44bc75853aeda, type: 3}
   - {fileID: 5467148021888931754, guid: 0e2d7e49505360f4ba54de4904cbefcf, type: 3}
+  myDogCageList:
+  - {fileID: 8414609922946882451, guid: 96ffd2f9803641f4aaa7ffecabfa177d, type: 3}
+  - {fileID: 5511914230246841589, guid: 73c2af945acd7ec4ea7f9d3adb5a37f0, type: 3}
+  - {fileID: 785370544161627941, guid: d3365e28401cd144d845bd81a5b0731d, type: 3}
   tMax: 20
 --- !u!1 &1359186400
 GameObject:
