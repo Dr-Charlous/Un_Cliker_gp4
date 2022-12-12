@@ -138,7 +138,7 @@ public class Maingame : MonoBehaviour
         if(nowIsEvent == true && goldButton.active == false)
         {
             goldButton.SetActive(true);
-            goldButton.transform.position = new Vector3(Random.Range(400, 1500), Random.Range(200, 840), 0);
+            goldButton.transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-8, 8), 0);
         }
 
         //HIT
@@ -155,7 +155,7 @@ public class Maingame : MonoBehaviour
         //HIT
         plusObject.SetActive(true);
 
-        plusObject.transform.position = new Vector3(Random.Range(465, 645 + 1), Random.Range(205, 405 + 1), 0);
+        plusObject.transform.position = new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0);
         
         //plusObject.SetActive(false);
 
@@ -252,7 +252,7 @@ public class Maingame : MonoBehaviour
         {
             yield return new WaitForSeconds(0.01f);
 
-            plusObject.transform.position = new Vector3(plusObject.transform.position.x, plusObject.transform.position.y + 2, 0);
+            plusObject.transform.position = new Vector3(plusObject.transform.position.x, plusObject.transform.position.y + 0.2f, 0);
         }
 
         plusObject.SetActive(false);
