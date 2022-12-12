@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Maingame : MonoBehaviour
 {
     //CLIKER
+    public GameObject Button;
     public Text scoreText;
     public float currentScore;
     public float hitPower;
@@ -38,6 +39,9 @@ public class Maingame : MonoBehaviour
     //XXLUP
     public int allUpgradePrize;
     public Text allUpgradeText;
+
+    public List<Sprite> ChenilUp = new List<Sprite>();
+    private int lvlChenil = 0;
 
     //RANDOM GOLD
     public bool nowIsEvent;
@@ -99,6 +103,9 @@ public class Maingame : MonoBehaviour
         scoreText.text = "Money : " + (int)currentScore + " $";
         scoreIncreasePerSecond = x * Time.deltaTime;
         currentScore = currentScore + scoreIncreasePerSecond;
+
+        Image image = Button.GetComponent<Image>();
+        image.sprite = ChenilUp[lvlChenil];
 
         //SHOP
         shop1text.text = "Tier 1: " + shop1prize + " $";
@@ -217,6 +224,11 @@ public class Maingame : MonoBehaviour
             allUpgradePrize *= 3;
             amount1Profit *= 2;
             amount2Profit *= 2;
+
+            if(lvlChenil < ChenilUp.Count-1)
+            {
+                lvlChenil++;
+            }
         }
     }
 
@@ -266,6 +278,8 @@ public class Maingame : MonoBehaviour
         hitPower = 1;
         scoreIncreasePerSecond = 1;
         x = 0f;
+
+        lvlChenil = 0;
 
         //SET ALL VAR BEFORE LOAD
         shop1prize = 25;
