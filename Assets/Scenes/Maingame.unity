@@ -388,7 +388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -541, y: -266}
+  m_AnchoredPosition: {x: -569.58105, y: -515}
   m_SizeDelta: {x: 383.2662, y: 121.9984}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &208160617
@@ -1156,7 +1156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -543.41895, y: -98}
+  m_AnchoredPosition: {x: -572, y: -347}
   m_SizeDelta: {x: 377.913, y: 90.3802}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &604527505
@@ -1504,7 +1504,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Buy
 --- !u!222 &852624464
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1651,7 +1651,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Buy
 --- !u!222 &905954310
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1989,7 +1989,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -543.34753, y: -7.355835}
+  m_AnchoredPosition: {x: -571.9286, y: -256.35583}
   m_SizeDelta: {x: 371.7499, y: 80.8466}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1182716220
@@ -2366,12 +2366,14 @@ MonoBehaviour:
   - {fileID: 2362743612727482887, guid: e1ea4905175516e4282d9ac66577842b, type: 3}
   - {fileID: 1640644433194454926, guid: 7ab436d3f13741b438034fa7a1b1615b, type: 3}
   - {fileID: 579314693468517755, guid: 6b75c294144a8e346a41c3427a1ebe15, type: 3}
-  - {fileID: 2573668279297543186, guid: f02d1a3e4490a9b48be54c71c7e72195, type: 3}
-  - {fileID: 4867020868440753455, guid: f1f5dc2f009a91847ad44bc75853aeda, type: 3}
-  - {fileID: 5467148021888931754, guid: 0e2d7e49505360f4ba54de4904cbefcf, type: 3}
   - {fileID: 3291993229414778129, guid: b52331e8d5a701e43b56e212bb3c06bb, type: 3}
   - {fileID: 5611907810003946923, guid: 48669ef106ee81442a4256d6657649d3, type: 3}
   - {fileID: 2927830632099156918, guid: c9ec3672d0e6a244c876e55b38cabf27, type: 3}
+  myDogHList:
+  - {fileID: 2573668279297543186, guid: f02d1a3e4490a9b48be54c71c7e72195, type: 3}
+  - {fileID: 4867020868440753455, guid: f1f5dc2f009a91847ad44bc75853aeda, type: 3}
+  - {fileID: 5467148021888931754, guid: 0e2d7e49505360f4ba54de4904cbefcf, type: 3}
+  tMax: 20
 --- !u!1 &1359186400
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,7 +2445,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: ClickUP
 --- !u!222 &1359186403
 CanvasRenderer:
   m_ObjectHideFlags: 0

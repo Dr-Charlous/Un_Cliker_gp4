@@ -14,7 +14,7 @@ public class DoggoGen : MonoBehaviour
     {
         t+=1;
 
-        if (t == tMax)
+        if (t >= tMax)
         {
             int i = Random.Range(0, 2);
             if (i == 0)
