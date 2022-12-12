@@ -8,7 +8,7 @@ public class DoggoGen : MonoBehaviour
     public List<GameObject> myDogList = new List<GameObject>();
     public List<GameObject> myDogHList = new List<GameObject>();
     private int t = 0;
-    public int tMax = 20;
+    public int tMax = 200;
 
     public void DoggoSpawn()
     {
