@@ -20,18 +20,18 @@ public class DoggoGen : MonoBehaviour
             int i = Random.Range(0, 3);
             if (i == 0)
             {
-                GameObject spawned = Instantiate(myDogList[Random.Range(0, myDogList.Count)], new Vector3(-12, 0, 0), Quaternion.identity);
+                GameObject spawned = Instantiate(myDogList[Random.Range(0, myDogList.Count)], new Vector3(-12, -2.1f, 0), Quaternion.identity);
                 spawned.transform.SetParent(this.transform);
                 spawned.AddComponent<Dog>();
             }
             else if(i == 1)
             {
-                GameObject spawned = Instantiate(myDogHList[Random.Range(0, myDogHList.Count)], new Vector3(-12, 0.5f, 0), Quaternion.identity);
+                GameObject spawned = Instantiate(myDogHList[Random.Range(0, myDogHList.Count)], new Vector3(-12, -1.9f, 0), Quaternion.identity);
                 spawned.transform.SetParent(this.transform);
                 spawned.AddComponent<Dog>();
             } else
             {
-                GameObject spawned = Instantiate(myDogCageList[Random.Range(0, myDogCageList.Count)], new Vector3(-12, 2, 0), Quaternion.identity);
+                GameObject spawned = Instantiate(myDogCageList[Random.Range(0, myDogCageList.Count)], new Vector3(-12, -4.4f, 0), Quaternion.identity);
                 spawned.transform.SetParent(this.transform);
                 spawned.AddComponent<Dog>();
             }
