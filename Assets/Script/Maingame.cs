@@ -124,13 +124,13 @@ public class Maingame : MonoBehaviour
         allUpgradeText.text = "Cost: " + allUpgradePrize + " $";
 
         //RANDOM GOLD
-        if(nowIsEvent == false && goldButton.active == true)
+        if(nowIsEvent == false && goldButton.activeInHierarchy == true)
         {
             goldButton.SetActive(false);
             StartCoroutine(WaitForEvent());
         }
 
-        if(nowIsEvent == true && goldButton.active == false)
+        if(nowIsEvent == true && goldButton.activeInHierarchy == false)
         {
             goldButton.SetActive(true);
             goldButton.transform.position = new Vector3(Random.Range(400, 1520), Random.Range(200, 880), 0);
@@ -218,6 +218,7 @@ public class Maingame : MonoBehaviour
         StartCoroutine(WaitForEvent());
     }
 
+    //RANDOM EVENT
     IEnumerator WaitForEvent()
     {
         yield return new WaitForSeconds(5f);
