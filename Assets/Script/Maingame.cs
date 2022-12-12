@@ -115,8 +115,8 @@ public class Maingame : MonoBehaviour
         shop2text.text = "Tier 2: " + shop2prize + " $";
 
         //AMOUNT
-        amount1Text.text = "Tier 1: " + amount1 + " arts $:" + amount1Profit + "/s";
-        amount2Text.text = "Tier 2: " + amount2 + " arts $:" + amount2Profit + "/s";
+        amount1Text.text = "Tier 1: " + amount1 + " dogs $:" + amount1Profit + "/s";
+        amount2Text.text = "Tier 2: " + amount2 + " dogs $:" + amount2Profit + "/s";
 
         //UPGRADE
         upgradeText.text = "Cost: " + upgradePrize + " $";
