@@ -16,6 +16,9 @@ public class Maingame : MonoBehaviour
     //SHOP
     public GameObject ShopButton;
     public GameObject MenuShop;
+    public GameObject Auto1;
+    public GameObject Auto2;
+    public GameObject Pub;
 
     public long shop1prize;
     public Text shop1text;
@@ -145,7 +148,7 @@ public class Maingame : MonoBehaviour
         if(nowIsEvent == true && goldButton.active == false)
         {
             goldButton.SetActive(true);
-            goldButton.transform.position = new Vector3(Random.Range(-8, 8), Random.Range(-8, 8), 0);
+            goldButton.transform.position = new Vector3(Random.Range(-6, 6), Random.Range(-6, 6), 0);
         }
 
         //HIT
@@ -162,7 +165,7 @@ public class Maingame : MonoBehaviour
         //HIT
         plusObject.SetActive(true);
 
-        plusObject.transform.position = new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), 0);
+        plusObject.transform.position = new Vector3(Random.Range(0, 6), Random.Range(-4, 2), 0);
         
         //plusObject.SetActive(false);
 
@@ -186,6 +189,8 @@ public class Maingame : MonoBehaviour
             amount1Profit += 1;
             x += 1;
             shop1prize += 25;
+
+            Auto1.SetActive(true);
         }
     }
 
@@ -198,6 +203,8 @@ public class Maingame : MonoBehaviour
             amount2Profit += 5;
             x += 5;
             shop2prize += 125;
+
+            Auto2.SetActive(true);
         }
     }
 
@@ -211,6 +218,8 @@ public class Maingame : MonoBehaviour
             currentScore -= upgradePrize;
             hitPower *= 2;
             upgradePrize *= 3;
+
+            Pub.SetActive(true);
         }
     }
 
