@@ -8,7 +8,7 @@ public class Maingame : MonoBehaviour
     //CLIKER
     public GameObject Button;
     public Text scoreText;
-    public float currentScore;
+    public double currentScore;
     public float hitPower;
     public float scoreIncreasePerSecond;
     public float x;
@@ -17,10 +17,10 @@ public class Maingame : MonoBehaviour
     public GameObject ShopButton;
     public GameObject MenuShop;
 
-    public int shop1prize;
+    public long shop1prize;
     public Text shop1text;
 
-    public int shop2prize;
+    public long shop2prize;
     public Text shop2text;
 
     //AMOUNT
@@ -33,7 +33,7 @@ public class Maingame : MonoBehaviour
     public float amount2Profit;
 
     //UPGRADE
-    public int upgradePrize;
+    public long upgradePrize;
     public Text upgradeText;
 
     //XXLUP
@@ -264,7 +264,7 @@ public class Maingame : MonoBehaviour
         {
             yield return new WaitForSeconds(0.01f);
 
-            plusObject.transform.position = new Vector3(plusObject.transform.position.x, plusObject.transform.position.y + 0.2f, 0);
+            plusObject.transform.position = new Vector3(plusObject.transform.position.x, plusObject.transform.position.y + 0.05f, 0);
         }
 
         plusObject.SetActive(false);
