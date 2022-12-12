@@ -20,10 +20,10 @@ public class Maingame : MonoBehaviour
     public GameObject Auto2;
     public GameObject Pub;
 
-    public long shop1prize;
+    public double shop1prize;
     public Text shop1text;
 
-    public long shop2prize;
+    public double shop2prize;
     public Text shop2text;
 
     //AMOUNT
@@ -36,7 +36,7 @@ public class Maingame : MonoBehaviour
     public float amount2Profit;
 
     //UPGRADE
-    public long upgradePrize;
+    public double upgradePrize;
     public Text upgradeText;
 
     //XXLUP
@@ -72,12 +72,12 @@ public class Maingame : MonoBehaviour
         x = 0f;
 
         //SET ALL VAR BEFORE LOAD
-        shop1prize = 25;
-        shop2prize = 125;
+        shop1prize = 75;
+        shop2prize = 750;
         amount1 = 0;
         amount1Profit = 1;
         amount2 = 0;
-        amount2Profit = 5;
+        amount2Profit = 10;
 
         //RESET LINE
         //PlayerPrefs.DeleteAll();
@@ -188,7 +188,7 @@ public class Maingame : MonoBehaviour
             amount1 += 1;
             amount1Profit += 1;
             x += 1;
-            shop1prize += 25;
+            shop1prize *= 1.2f;
 
             Auto1.SetActive(true);
         }
@@ -200,9 +200,9 @@ public class Maingame : MonoBehaviour
         {
             currentScore -= shop2prize;
             amount2 += 1;
-            amount2Profit += 5;
-            x += 5;
-            shop2prize += 125;
+            amount2Profit += 10;
+            x += 10;
+            shop2prize *= 1.3f;
 
             Auto2.SetActive(true);
         }
@@ -216,8 +216,8 @@ public class Maingame : MonoBehaviour
         if(currentScore >= upgradePrize)
         {
             currentScore -= upgradePrize;
-            hitPower *= 2;
-            upgradePrize *= 3;
+            hitPower+=1;
+            upgradePrize *= 1.2f;
 
             Pub.SetActive(true);
         }
@@ -291,15 +291,15 @@ public class Maingame : MonoBehaviour
         lvlChenil = 0;
 
         //SET ALL VAR BEFORE LOAD
-        shop1prize = 25;
-        shop2prize = 125;
+        shop1prize = 75;
+        shop2prize = 750;
         amount1 = 0;
         amount1Profit = 1;
         amount2 = 0;
-        amount2Profit = 5;
+        amount2Profit = 10;
 
-        allUpgradePrize = 500;
-        upgradePrize = 500;
+        allUpgradePrize = 8000;
+        upgradePrize = 5;
     }
 
 }
