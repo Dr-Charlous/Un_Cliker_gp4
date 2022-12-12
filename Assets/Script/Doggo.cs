@@ -9,6 +9,7 @@ public class Doggo : MonoBehaviour
 
     public void DoggoSpawn()
     {
-        GameObject spawned = Instantiate(myDogList[Random.Range(0,3)], new Vector3(Random.Range(465, 645 + 1), Random.Range(205, 405 + 1), 0), Quaternion.identity);
+        GameObject spawned = Instantiate(myDogList[Random.Range(0,3)], new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0), Quaternion.identity);
+        spawned.transform.SetParent(this.transform);
     }
 }
