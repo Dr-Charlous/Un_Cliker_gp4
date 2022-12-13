@@ -25,6 +25,9 @@ public class AudioManager : MonoBehaviour
 	public void OnClickSound()
 	{
 		_clip = Random.Range(0, clips.Length);
-		audioSource.PlayOneShot(clips[_clip], volume);
+		if (!audioSource.isPlaying)
+		{
+			audioSource.PlayOneShot(clips[_clip], volume);
+		}
 	}
 }
