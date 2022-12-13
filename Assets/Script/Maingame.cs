@@ -329,6 +329,7 @@ public class Maingame : MonoBehaviour
         allUpgradePrize = 8000;
         upgradePrize = 5;
 
+        //SET UPP
         Pub.SetActive(false);
         Auto1.SetActive(false);
         Auto2.SetActive(false);
