@@ -9,6 +9,18 @@ public class AudioManager : MonoBehaviour
 	public float volume;
 
 	private int _clip = 0;
+	public AudioClip clip;
+
+	void Start()
+	{
+		AudioSource audioSource = GetComponent<AudioSource>();
+		audioSource.clip = clip;
+		if(audioSource.isPlaying)
+        {
+			audioSource.Stop();
+		}
+		audioSource.Play();
+	}
 
 	public void OnClickSound()
 	{
