@@ -17,8 +17,11 @@ public class Maingame : MonoBehaviour
     public GameObject ShopButton;
     public GameObject MenuShop;
     public GameObject Auto1;
+    private int Auto1Save = 0;
     public GameObject Auto2;
+    private int Auto2Save = 0;
     public GameObject Pub;
+    private int PubSave = 0;
 
     public double shop1prize;
     public Text shop1text;
@@ -95,6 +98,10 @@ public class Maingame : MonoBehaviour
         amount2Profit = PlayerPrefs.GetInt("amount2Profit", 0);
         upgradePrize = PlayerPrefs.GetInt("upgradePrize", 50);
         allUpgradePrize = PlayerPrefs.GetInt("allUpgradePrize", 500);
+        lvlChenil = PlayerPrefs.GetInt("lvlChenil", 0);
+        Auto1Save = PlayerPrefs.GetInt("Auto1Save", 0);
+        Auto2Save = PlayerPrefs.GetInt("Auto2Save", 0);
+        PubSave = PlayerPrefs.GetInt("PubSave", 0);
     }
 
 
@@ -134,6 +141,10 @@ public class Maingame : MonoBehaviour
         PlayerPrefs.SetInt("amount2Profit", (int)amount2Profit);
         PlayerPrefs.SetInt("upgradePrize", (int)upgradePrize);
         PlayerPrefs.SetInt("allUpgradePrize", (int)allUpgradePrize);
+        PlayerPrefs.SetInt("lvlChenil", (int)lvlChenil);
+        PlayerPrefs.SetInt("Auto1Save", (int)Auto1Save);
+        PlayerPrefs.SetInt("Auto2Save", (int)Auto2Save);
+        PlayerPrefs.SetInt("PubSave", (int)PubSave);
 
         //XXLUP
         allUpgradeText.text = "Cost: " + allUpgradePrize + " $";
@@ -153,6 +164,20 @@ public class Maingame : MonoBehaviour
 
         //HIT
         plusText.text = "+ " + hitPower;
+
+        //Upp
+        if(Auto1Save == 1)
+        {
+            Auto1.SetActive(true);
+        }
+        if (Auto2Save == 1)
+        {
+            Auto2.SetActive(true);
+        }
+        if (PubSave == 1)
+        {
+            Pub.SetActive(true);
+        }
     }
 
 
@@ -191,6 +216,7 @@ public class Maingame : MonoBehaviour
             shop1prize *= 1.2f;
 
             Auto1.SetActive(true);
+            Auto1Save = 1;
         }
     }
 
@@ -205,6 +231,7 @@ public class Maingame : MonoBehaviour
             shop2prize *= 1.3f;
 
             Auto2.SetActive(true);
+            Auto2Save = 1;
         }
     }
 
@@ -220,6 +247,7 @@ public class Maingame : MonoBehaviour
             upgradePrize *= 1.2f;
 
             Pub.SetActive(true);
+            PubSave = 1;
         }
     }
 
@@ -300,6 +328,11 @@ public class Maingame : MonoBehaviour
 
         allUpgradePrize = 8000;
         upgradePrize = 5;
+
+        Pub.SetActive(false);
+        Auto1.SetActive(false);
+        Auto2.SetActive(false);
+        MenuShop.SetActive(false);
     }
 
 }
