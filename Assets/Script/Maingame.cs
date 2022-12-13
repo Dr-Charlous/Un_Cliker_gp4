@@ -15,7 +15,9 @@ public class Maingame : MonoBehaviour
 
     //SHOP
     public GameObject ShopButton;
+    public GameObject MenuButton;
     public GameObject MenuShop;
+    public GameObject MenuMenu;
     public GameObject Auto1;
     private int Auto1Save = 0;
     public GameObject Auto2;
@@ -118,12 +120,12 @@ public class Maingame : MonoBehaviour
         image.sprite = ChenilUp[lvlChenil];
 
         //SHOP
-        shop1text.text = "Tier 1: " + (int)shop1prize + " $";
-        shop2text.text = "Tier 2: " + (int)shop2prize + " $";
+        shop1text.text = "Auto 1: " + (int)shop1prize + " $";
+        shop2text.text = "Auto 2: " + (int)shop2prize + " $";
 
         //AMOUNT
-        amount1Text.text = "Tier 1: " + (int)amount1 + " dogs $:" + (int)amount1Profit + "/s";
-        amount2Text.text = "Tier 2: " + (int)amount2 + " dogs $:" + (int)amount2Profit + "/s";
+        amount1Text.text = "Auto 1: " + (int)amount1 + " dogs $:" + (int)amount1Profit + "/s";
+        amount2Text.text = "Auto 2: " + (int)amount2 + " family $:" + (int)amount2Profit + "/s";
 
         //UPGRADE
         upgradeText.text = "Cost: " + (int)upgradePrize + " $";
@@ -203,6 +205,10 @@ public class Maingame : MonoBehaviour
     public void ShopBut()
     {
         MenuShop.SetActive(!MenuShop.activeSelf);
+    }
+    public void MenuBut()
+    {
+        MenuMenu.SetActive(!MenuMenu.activeSelf);
     }
 
     public void Shop1()
@@ -337,6 +343,7 @@ public class Maingame : MonoBehaviour
         Auto2.SetActive(false);
         Auto2Save = 0;
         MenuShop.SetActive(false);
+        MenuMenu.SetActive(false);
     }
 
 }
