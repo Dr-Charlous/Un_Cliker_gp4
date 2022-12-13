@@ -299,7 +299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &108418247
 Transform:
   m_ObjectHideFlags: 0
@@ -2791,7 +2791,7 @@ MonoBehaviour:
   upgradePrize: 0
   upgradeText: {fileID: 1182716220}
   allUpgradePrize: 500
-  allUpgradeText: {fileID: 1611080952}
+  allUpgradeText: {fileID: 814848578}
   ChenilUp:
   - {fileID: 21300000, guid: ee9ccb2f1baeef04885758869287679d, type: 3}
   - {fileID: 21300000, guid: e2f44cce6ee0a954a8ab6f6b1fa65021, type: 3}
@@ -2956,7 +2956,7 @@ MonoBehaviour:
   - {fileID: 8414609922946882451, guid: 96ffd2f9803641f4aaa7ffecabfa177d, type: 3}
   - {fileID: 5511914230246841589, guid: 73c2af945acd7ec4ea7f9d3adb5a37f0, type: 3}
   - {fileID: 785370544161627941, guid: d3365e28401cd144d845bd81a5b0731d, type: 3}
-  tMax: 20
+  tMax: 5
 --- !u!1 &1359186400
 GameObject:
   m_ObjectHideFlags: 0
@@ -3618,7 +3618,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: XXLUP
+  m_Text: kennel
 --- !u!222 &1611080953
 CanvasRenderer:
   m_ObjectHideFlags: 0

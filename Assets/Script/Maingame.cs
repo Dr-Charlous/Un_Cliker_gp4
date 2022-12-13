@@ -118,15 +118,15 @@ public class Maingame : MonoBehaviour
         image.sprite = ChenilUp[lvlChenil];
 
         //SHOP
-        shop1text.text = "Tier 1: " + shop1prize + " $";
-        shop2text.text = "Tier 2: " + shop2prize + " $";
+        shop1text.text = "Tier 1: " + (int)shop1prize + " $";
+        shop2text.text = "Tier 2: " + (int)shop2prize + " $";
 
         //AMOUNT
-        amount1Text.text = "Tier 1: " + amount1 + " dogs $:" + amount1Profit + "/s";
-        amount2Text.text = "Tier 2: " + amount2 + " dogs $:" + amount2Profit + "/s";
+        amount1Text.text = "Tier 1: " + (int)amount1 + " dogs $:" + (int)amount1Profit + "/s";
+        amount2Text.text = "Tier 2: " + (int)amount2 + " dogs $:" + (int)amount2Profit + "/s";
 
         //UPGRADE
-        upgradeText.text = "Cost: " + upgradePrize + " $";
+        upgradeText.text = "Cost: " + (int)upgradePrize + " $";
 
         //SAVE
         PlayerPrefs.SetInt("currentScore", (int)currentScore);
@@ -147,7 +147,7 @@ public class Maingame : MonoBehaviour
         PlayerPrefs.SetInt("PubSave", (int)PubSave);
 
         //XXLUP
-        allUpgradeText.text = "Cost: " + allUpgradePrize + " $";
+        allUpgradeText.text = "Cost: " + (int)allUpgradePrize + " $";
 
         //RANDOM GOLD
         if(nowIsEvent == false && goldButton.active == true)
