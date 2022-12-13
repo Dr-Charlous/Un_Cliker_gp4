@@ -331,8 +331,11 @@ public class Maingame : MonoBehaviour
 
         //SET UPP
         Pub.SetActive(false);
+        PubSave = 0;
         Auto1.SetActive(false);
+        Auto1Save = 0;
         Auto2.SetActive(false);
+        Auto2Save = 0;
         MenuShop.SetActive(false);
     }
 
