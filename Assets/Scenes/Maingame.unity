@@ -406,7 +406,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1249010829}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: OnClickQuit
+        m_MethodName: OnClickMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -618,7 +618,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1249010830}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: OnClickSound
         m_Mode: 1
@@ -1761,7 +1761,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1249010830}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: OnClickSound
         m_Mode: 1
@@ -2441,7 +2441,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1249010830}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: OnClickSound
         m_Mode: 1
@@ -2882,7 +2882,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1249010830}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: OnClickSound
         m_Mode: 1
@@ -2941,8 +2941,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1249010827}
-  - component: {fileID: 1249010830}
   - component: {fileID: 1249010829}
+  - component: {fileID: 1249010832}
   - component: {fileID: 1249010828}
   - component: {fileID: 1249010831}
   m_Layer: 0
@@ -3030,26 +3030,6 @@ MonoBehaviour:
   ButtonStart: {fileID: 0}
   ButtonCredit: {fileID: 330594969}
   ButtonQuit: {fileID: 163720124}
---- !u!114 &1249010830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249010825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8633c39cd4796c34c990eb86d354cc86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 1179891697}
-  clips:
-  - {fileID: 8300000, guid: bdfdf1eb5a96d5940b8de94b8b82d132, type: 3}
-  - {fileID: 8300000, guid: 622e76cf41b31a8418326451ec28de45, type: 3}
-  - {fileID: 8300000, guid: 7bacf6e9ea8fdc94cbd75d9332517b79, type: 3}
-  - {fileID: 8300000, guid: de85af9b4f0844f4985d5f5dade82c23, type: 3}
-  volume: 0.3
-  clip: {fileID: 8300000, guid: a6db9cdfdde93a542b7572f0404c717b, type: 3}
 --- !u!82 &1249010831
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3146,6 +3126,26 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1249010832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249010825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8633c39cd4796c34c990eb86d354cc86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1179891697}
+  clips:
+  - {fileID: 8300000, guid: bdfdf1eb5a96d5940b8de94b8b82d132, type: 3}
+  - {fileID: 8300000, guid: 622e76cf41b31a8418326451ec28de45, type: 3}
+  - {fileID: 8300000, guid: 7bacf6e9ea8fdc94cbd75d9332517b79, type: 3}
+  - {fileID: 8300000, guid: de85af9b4f0844f4985d5f5dade82c23, type: 3}
+  volume: 0.3
+  clip: {fileID: 8300000, guid: a6db9cdfdde93a542b7572f0404c717b, type: 3}
 --- !u!1 &1338800815
 GameObject:
   m_ObjectHideFlags: 0
@@ -3617,7 +3617,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1249010830}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: OnClickSound
         m_Mode: 1
