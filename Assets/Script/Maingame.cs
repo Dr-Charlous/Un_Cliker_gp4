@@ -55,7 +55,6 @@ public class Maingame : MonoBehaviour
     public bool nowIsEvent;
     public GameObject goldButton;
     private int Timer;
-    //GoldMove GoldMove = GetComponent<GoldMove>();
 
     //RESET
     public GameObject resetButton;
@@ -152,14 +151,13 @@ public class Maingame : MonoBehaviour
         if (nowIsEvent == true && goldButton.active == false)
         {
             goldButton.SetActive(true);
-            goldButton.transform.position = new Vector3(Random.Range(-6, 6), Random.Range(-6, 6), 0);
+            goldButton.transform.position = new Vector3(Random.Range(-5, 5), Random.Range(-3, 3), 0);
             Timer = 0;
-            //goldButton.state = GoldMoveState.ENDMOVE;
         }
         if (goldButton.activeInHierarchy == true)
         {
             Timer += 1;
-            if (Timer >= 5000)
+            if (Timer >= 1000)
             {
                 goldButton.SetActive(false);
                 nowIsEvent = false;
