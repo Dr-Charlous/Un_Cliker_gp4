@@ -54,6 +54,8 @@ public class Maingame : MonoBehaviour
     //RANDOM GOLD
     public bool nowIsEvent;
     public GameObject goldButton;
+    private int Timer;
+    //GoldMove GoldMove = GetComponent<GoldMove>();
 
     //RESET
     public GameObject resetButton;
@@ -108,6 +110,10 @@ public class Maingame : MonoBehaviour
 
 
 
+
+
+
+
     //Update per frame
     void Update()
     {
@@ -131,6 +137,71 @@ public class Maingame : MonoBehaviour
         upgradeText.text = "Cost: " + (int)upgradePrize + " $";
 
         //SAVE
+        Save();
+
+        //XXLUP
+        allUpgradeText.text = "Cost: " + (int)allUpgradePrize + " $";
+
+        //RANDOM GOLD
+        if (nowIsEvent == false && goldButton.active == true)
+        {
+            goldButton.SetActive(false);
+            StartCoroutine(WaitForEvent());
+        }
+
+        if (nowIsEvent == true && goldButton.active == false)
+        {
+            goldButton.SetActive(true);
+            goldButton.transform.position = new Vector3(Random.Range(-6, 6), Random.Range(-6, 6), 0);
+            Timer = 0;
+            //goldButton.state = GoldMoveState.ENDMOVE;
+        }
+        if (goldButton.activeInHierarchy == true)
+        {
+            Timer += 1;
+            if (Timer >= 5000)
+            {
+                goldButton.SetActive(false);
+                nowIsEvent = false;
+                StartCoroutine(WaitForEvent());
+                Timer = 0;
+            }
+        }
+        else
+        {
+            goldButton.transform.position = new Vector3(-10, -10, 0);
+        }
+
+        //HIT
+        plusText.text = "+ " + hitPower;
+
+        //Upp
+        if (Auto1Save == 1)
+        {
+            Auto1.SetActive(true);
+        }
+        if (Auto2Save == 1)
+        {
+            Auto2.SetActive(true);
+        }
+        if (PubSave == 1)
+        {
+            Pub.SetActive(true);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+    private void Save()
+    {
         PlayerPrefs.SetInt("currentScore", (int)currentScore);
         PlayerPrefs.SetInt("hitPower", (int)hitPower);
         PlayerPrefs.SetInt("x", (int)x);
@@ -147,42 +218,7 @@ public class Maingame : MonoBehaviour
         PlayerPrefs.SetInt("Auto1Save", (int)Auto1Save);
         PlayerPrefs.SetInt("Auto2Save", (int)Auto2Save);
         PlayerPrefs.SetInt("PubSave", (int)PubSave);
-
-        //XXLUP
-        allUpgradeText.text = "Cost: " + (int)allUpgradePrize + " $";
-
-        //RANDOM GOLD
-        if(nowIsEvent == false && goldButton.active == true)
-        {
-            goldButton.SetActive(false);
-            StartCoroutine(WaitForEvent());
-        }
-
-        if(nowIsEvent == true && goldButton.active == false)
-        {
-            goldButton.SetActive(true);
-            goldButton.transform.position = new Vector3(Random.Range(-6, 6), Random.Range(-6, 6), 0);
-        }
-
-        //HIT
-        plusText.text = "+ " + hitPower;
-
-        //Upp
-        if(Auto1Save == 1)
-        {
-            Auto1.SetActive(true);
-        }
-        if (Auto2Save == 1)
-        {
-            Auto2.SetActive(true);
-        }
-        if (PubSave == 1)
-        {
-            Pub.SetActive(true);
-        }
     }
-
-
 
     public void Hit()
     {
